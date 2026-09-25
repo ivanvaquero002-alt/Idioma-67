@@ -1,0 +1,28 @@
+# Programa que traduce cada letra a 6 o 7: Idioma 67
+def hablar_en_67():
+    print("¡Bienvenido al traductor letra por letra a 6 y 7!")
+    print("Escribe cualquier frase (o escribe 'salir' para terminar):")
+    
+    while True:
+        texto = input("\nPon algo: ")
+        
+        if texto.lower() == "salir":
+            print("¡Adiós! 6767")
+            break
+            
+        # Reemplazamos cada letra por 6 o 7 alternadamente
+        resultado = []
+        alternar = True
+        
+        for caracter in texto:
+            if caracter.isspace():
+                resultado.append(" ") # Mantiene los espacios
+            else:
+                resultado.append("6" if alternar else "7")
+                alternar = not alternar # Cambia entre 6 y 7 para la siguiente letra
+                
+        traduccion = "".join(resultado)
+        print(f"Traducción: {traduccion}")
+
+if __name__ == "__main__":
+    hablar_en_67()
